@@ -80,10 +80,13 @@
                                         <%= user.name %>
                                     </td>
                                     <td><!-- 
-                                    Dato relacionado
-                   
-                                    users->users_roles->roles.name
-                                 --></td>
+                                        Dato relacionado
+                           
+                                        users->users_roles->roles.name
+                                    -->
+
+                                        <%= user.users_roles.roles_idrole_role.name %>
+                                    </td>
                                     <td>
 
                                         <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i
