@@ -11,7 +11,15 @@ router.get('/', async function(req, res, next) {
      
       /* 3. Uso del método findAll */
    let usersCollection = await models.users.findAll({ })
-   res.render('crud', { title: 'CRUD with users', usersArray: usersCollection });
+   
+   let rolesCollection = await models.roles.findAll({ })
+
+   /* 4. Paso de parámetros a la vista */
+   res.render('crud', { 
+    title: 'CRUD with users', 
+    usersArray: usersCollection,
+    rolesArray: rolesCollection
+});
   
 });
  /* POST user. */
