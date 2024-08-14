@@ -11,6 +11,7 @@ var authenticateSession = require("./middleware/authentication_session");
 var authorizationSession = require("./middleware/authorization_session");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
+var tokenRouter = require("./routes/token");
 var createError = require("http-errors");
 var express = require("express");
 
@@ -40,5 +41,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 /* 2. Agregue el middleware al router */
 app.use('/users', authenticateSession, authorizationSession, usersRouter);
+app.use('/token',authorizationSession,tokenRouter);
 
 module.exports = app;
