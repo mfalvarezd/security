@@ -5,7 +5,7 @@ var authorizationSession = (req, res, next) => {
 
     if(userRole === 'user') {
         
-        return res.render("token", { title: "Token user" ,username:req.cookies['username']});
+        return res.redirect("/token");
     } else if(process.env.ALL_GRANTED.includes(userRole)) {
        
         return next();

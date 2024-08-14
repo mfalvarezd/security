@@ -41,6 +41,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 /* 2. Agregue el middleware al router */
 app.use('/users', authenticateSession, authorizationSession, usersRouter);
-app.use('/token',authenticateSession,authorizationSession,tokenRouter);
+app.use('/token',authenticateSession,tokenRouter);
 
 module.exports = app;
